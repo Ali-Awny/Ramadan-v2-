@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fustat:wght@200..800&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lemonada:wght@300..700&family=Oi&family=Oswald:wght@200..700&family=Outfit:wght@100..900&family=Young+Serif&display=swap" rel="stylesheet">
+
+<title>Ramadan Mobarak🌙</title>
+</head>
+
+<body>
+
+    <div class="lantern-container right">
+    <div class="lantern">
+        <div class="lantern-handle"></div>
+        <div class="lantern-body"><div class="lantern-light"></div></div>
+    </div>
+    </div>
+
+    <div class="lantern-container left">
+        <div class="lantern">
+            <div class="lantern-handle"></div>
+            <div class="lantern-body"><div class="lantern-light"></div></div>
+        </div>
+    </div>
+
+    <header class="header">
+        <h1>رمضان مبارك 🌙</h1>
+    </header>
+
+    <section class="content">
+        <div class="card">
+            <p>ادخل الكود الخاص بك</p>
+
+            <form id="codeForm">
+                <input type="text" id="codeInput" placeholder="اكتب الكود هنا" required>
+                <button type="submit">تحقق</button>
+            </form>
+
+            <div id="hint"><span>😉</span> الكود: حاول تخمنه</div>
+            <div id="message"></div>
+        </div>
+    </section>
+
+    <footer class="footer">
+    صُمِّم بحب 🤍 بواسطة <span>Ali Awny</span>
+    </footer>
+
+
+
+
+<script>
+const form = document.getElementById("codeForm");
+const input = document.getElementById("codeInput");
+const message = document.getElementById("message");
+const card = document.querySelector(".card");
+
+form.addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    // 👇 هنا بنحط كل الأكواد والصفحات
+    const codes = {
+        "ahmed": "pages/ahmedmansour.html",
+        "reda": "pages/reda.html",
+        "hamdy": "pages/hamdy.html",
+        "hussien": "pages/hussien.html",
+        "mohamedwael": "pages/mohamedwael.html",
+        "yousefayman": "pages/yousefayman.html",
+        "shadow": "pages/youssefmohamed.html",
+        "mohamedahmed": "pages/mohamedahmed.html",
+        "abdo": "pages/abdelwahab.html",
+        "moaz": "pages/moazg.html", 
+        "yahya": "pages/yahya.html",   
+        "king": "pages/abdo.html",
+        "dama": "pages/dama.html",
+        "seif": "pages/seifnawar.html",
+        "mustafa": "pages/mustafa.html",
+        "khaled": "pages/khaled.html",
+        "sirmohamed": "pages/sirmohamed.html",
+        "abdulrahman": "pages/abdulrahman.html",
+        "sefo": "pages/siefayman.html",
+        "mezo": "pages/moazmohsen.html",
+        "omar": "pages/omar.html",
+        "yousef": "pages/yousefshaaban.html",
+        "280372": "pages/baba.html",
+        "291083": "pages/mama.html",
+        "211105": "pages/ahmed.html",
+        "061214": "pages/boody.html",
+        "230908": "pages/reem.html",
+        "smsm": "pages/smsm.html"
+    };
+
+    const userCode = input.value.trim();
+
+    if (codes[userCode]) {
+        // ينقله للصفحة الخاصة بيه
+        window.location.href = codes[userCode];
+    } else {
+        message.textContent = "❌ الكود غير صحيح حاول مرة تانية";
+        message.style.color = "red";
+
+        card.classList.add("shake");
+        setTimeout(() => {
+            card.classList.remove("shake");
+        }, 500);
+    }
+});
+</script>
+
+
+</body>
+</html>

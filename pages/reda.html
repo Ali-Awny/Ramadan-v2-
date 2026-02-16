@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="images/favicon-32x32.png">
+    <link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@400;700&display=swap" rel="stylesheet">
+    <title>رمضان كريم يا رضاا 🌙</title>
+
+    
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    body{
+    font-family:"Aref Ruqaa", serif;
+    min-height:100vh;
+    background: linear-gradient(to bottom , #0f2027, #2c5364);
+    display:flex;
+    flex-direction:column; /* 👈 مهم */
+    align-items:center;
+    text-align:center;
+    color:white;
+   }
+ 
+    .container{
+      width:90%;
+      max-width:400px;
+      padding:15px;
+      margin-top: 40px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.1);
+      padding:30px;
+      border-radius:10px;
+      box-shadow:0 4px 15px rgba(0,0,0,0.2);
+    }
+
+    .card:hover{
+      background:rgba(255,255,255,0.2);
+      box-shadow:0 6px 20px rgba(0,0,0,0.3);
+      transform:translateY(-5px);
+      transition:0.7s ease;
+    }
+
+    .card h1{
+      font-size:37px;
+      margin-bottom:45px;
+    }   
+
+    .card p{
+      font-size: 20px;
+      line-height:1.6;
+    }
+
+        
+    /* تنسيق الحاويات الأساسي */
+    .lantern-container {
+        position: fixed; /* عشان يفضل ثابت وأنت بتعمل سكرول */
+        top: 0;
+        z-index: -2;
+        transform-origin: top center;
+    }
+
+    /* تحديد مكان اليمين */
+    .lantern-container.right {
+        right: 5%;
+        animation: swing 3s ease-in-out infinite;
+    }
+
+    /* تحديد مكان الشمال */
+    .lantern-container.left {
+        left: 5%;
+        animation: swing 3.5s ease-in-out infinite reverse; /* حركة عكسية وبسرعة مختلفة */
+    }
+
+    /* إضافة خيط للفانوس */
+    .lantern-container::before {
+        content: '';
+        position: absolute;
+        top: -50px; /* طول الخيط */
+        left: 50%;
+        width: 2px;
+        height: 50px;
+        background: #ffd700;
+    }
+
+    /* شكل الفانوس (نفس الكود السابق مع لمسة ألوان) */
+    .lantern {
+        width: 50px;
+        height: 80px;
+        background: linear-gradient(45deg, #cc9900, #ffcc00);
+        clip-path: polygon(20% 0%, 80% 0%, 100% 20%, 100% 80%, 80% 100%, 20% 100%, 0% 80%, 0% 20%);
+        position: relative;
+        box-shadow: 0 0 15px rgba(255, 204, 0, 0.7);
+    }
+
+    .lantern-light {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 20px;
+        height: 40px;
+        background: #fff;
+        filter: blur(8px);
+        border-radius: 50%;
+        animation: glow 1.5s infinite alternate;
+    }
+
+    @keyframes swing {
+        0% { transform: rotate(-8deg); }
+        100% { transform: rotate(8deg); }
+    }
+
+    @keyframes glow {
+        from { opacity: 0.4; box-shadow: 0 0 5px #fff; }
+        to { opacity: 1; box-shadow: 0 0 20px #ffcc00; }
+    }
+
+
+    .container2 {
+        width:90%;
+        max-width:400px;
+        padding:20px;
+        background-color: burlywood;
+        border-radius: 20px;
+        margin-top: 40px;
+        font-size: 1.5rem;
+        color: burlywood; /* اللون اللي طلبته */
+        background: rgba(222, 184, 135, 0.2); /* شفاف شويه زي القزاز */
+        backdrop-filter: blur(5px); /* تأثير الزجاج */
+        padding: 15px 25px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(222, 184, 135, 0.6); /* glow خفيف */
+        animation: float 2.5s ease-in-out infinite alternate; /* حركة بسيطة فوق وتحت */
+        margin: 20px auto; /* توسيط العنصر */
+        text-shadow: 0 0 5px rgba(255,255,255,0.5); /* ناعم للنص */
+    }
+
+    .floating-box {
+        font-size: 1.5rem;
+        color: #0f2027; /* اللون اللي طلبته */
+        background: rgba(222, 184, 135, 0.2); /* شفاف شويه زي القزاز */
+        backdrop-filter: blur(5px); /* تأثير الزجاج */
+        padding: 15px 0px;
+        border-radius: 15px;
+        box-shadow: 0 0 15px rgba(222, 184, 135, 0.6); /* glow خفيف */
+        text-shadow: 0 0 5px rgba(255,255,255,0.5); /* ناعم للنص */
+    }
+    @keyframes float{
+        from { transform: translateY(0); }
+        to { transform: translateY(-10px); } /* يتحرك 10px للأعلى */
+    }
+
+
+    
+</style>
+
+</head>
+<body>
+
+    
+    <div class="lantern-container right">
+        <div class="lantern">
+            <div class="lantern-handle"></div>
+            <div class="lantern-body"><div class="lantern-light"></div></div>
+        </div>
+    </div>
+
+    <div class="lantern-container left">
+        <div class="lantern">
+            <div class="lantern-handle"></div>
+            <div class="lantern-body"><div class="lantern-light"></div></div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h1>رمضان كريم يا رضاا 🌙</h1>
+            <p>أتمنى لك شهرًا مليئًا بالبركات والسعادة. <br> ربنا يعيد علينا الايام بالخير ويكرمنا جميعا واشوفك كده اكبر fullstack devolper في مصر 🤍 </p>
+        </div>
+    </div>
+    
+   
+    <div class="container2">
+        <div class="floating-box">
+             <p>لا تنساني من صالح دعائك وَصَلِّ عَلَى النَّبِيِّ ﷺ</p>
+        </div>
+
+    </div>
+    
+    
+    
+</body>
+</html>
